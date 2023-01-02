@@ -10,6 +10,8 @@ void insertion_sort_list(listint_t **list)
 	listint_t *newNode;
 	newNode = (*list)->next;
 
+	if (!list || !(*list))
+		return;
 	while (newNode)
 	{
 		while (newNode->prev && newNode->n < newNode->prev->n)
