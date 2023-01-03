@@ -25,7 +25,7 @@ void swap(int *a, int *b)
  */
 int partition(int *array, int start, int end, size_t size)
 {
-	int i = (start - 1);
+	int i = start - 1;
 	int j;
 	int pivot = array[end];
 
@@ -35,13 +35,16 @@ int partition(int *array, int start, int end, size_t size)
 		{
 			i++;
 			swap(&array[i], &array[j]);
-			print_array(array, size);
+			/*print_array(array, size);*/
 		}
+
 	}
 	swap(&array[i + 1], &array[end]);
+	print_array(array, size);
 	return (i + 1);
 
 }
+
 /**
  * quicksort - function
  * @array: array of integers
@@ -51,6 +54,7 @@ int partition(int *array, int start, int end, size_t size)
  * Description: recursive function that sorts
  * Return: void
  */
+
 void quicksort(int *array, int start, int end, size_t size)
 {
 	int partitionIndex;
@@ -64,6 +68,7 @@ void quicksort(int *array, int start, int end, size_t size)
 	}
 
 }
+
 /**
  * quick_sort - function
  * @array: element to be swapped
