@@ -35,12 +35,14 @@ int partition(int *array, int start, int end, size_t size)
 		{
 			i++;
 			swap(&array[i], &array[j]);
-			/*print_array(array, size);*/
+			if (i != j)
+				print_array(array, size);
 		}
 
 	}
 	swap(&array[i + 1], &array[end]);
-	print_array(array, size);
+	if (i + 1 != j)
+		print_array(array, size);
 	return (i + 1);
 
 }
@@ -66,7 +68,6 @@ void quicksort(int *array, int start, int end, size_t size)
 		quicksort(array, start, partitionIndex - 1, size);
 		quicksort(array, partitionIndex + 1, end, size);
 	}
-
 }
 
 /**
